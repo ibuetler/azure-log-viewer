@@ -1,0 +1,33 @@
+{
+  "name": "websocketd-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node -r esm ./bin/www",
+    "dev": "nodemon ./bin/www --ext '.js,.json,.pug,.css' --exec babel-node",
+    "lint": "eslint . --ext .js --fix"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/node": "^7.25.7",
+    "@babel/preset-env": "^7.25.8",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "esm": "^3.2.25",
+    "express": "^4.21.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.7.1",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.7.0",
+    "pug": "^3.0.3",
+    "remarkable": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.31.0",
+    "nodemon": "^3.1.7"
+  }
+}

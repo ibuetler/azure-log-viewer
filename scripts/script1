@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "=================================================="
+figlet LIVE  LOGS
+echo "=================================================="
+echo "if output below is empty - there are no life logs available"
+echo "loading live logs..."
+
+tail -n 10000 -f /var/log/livecd.log |sort | uniq | grep -i azure
+

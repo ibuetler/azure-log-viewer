@@ -1,0 +1,86 @@
+server {
+	listen 80 default_server;
+
+	root /opt/www;
+	index index.html index.htm index.php;
+
+	server_name _;
+
+	client_max_body_size 0;
+
+        location /static {
+        }
+
+        location /api/script1/task {
+                proxy_pass http://127.0.0.1:8084;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location /api/script2/task {
+                proxy_pass http://127.0.0.1:8085;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location /api/script3/task {
+                proxy_pass http://127.0.0.1:8086;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location /api/script4/task {
+                proxy_pass http://127.0.0.1:8087;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+	location /api/script1 {
+		proxy_pass http://127.0.0.1:8080;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "Upgrade";
+		proxy_set_header Host $host;
+	}
+
+        location /api/script2 {
+                proxy_pass http://127.0.0.1:8081;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location /api/script3 {
+                proxy_pass http://127.0.0.1:8082;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location /api/script4 {
+                proxy_pass http://127.0.0.1:8083;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+        location / {
+                proxy_pass http://127.0.0.1:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+        }
+
+}

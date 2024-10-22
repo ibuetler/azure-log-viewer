@@ -1,0 +1,6 @@
+{
+    "apiUrl": "http://localhost/static",
+    "wsUrl": "wss://azure.idocker.hacking-lab.com/api",
+    "verbose": "true",
+    "appName": "Logs Azure Deployment"
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "=================================================="
+figlet STORED  LOGS
+echo "=================================================="
+echo "loading stored logs ... "
+sleep 4
+tail -n 200 /var/log/azure.log > /var/log/temp.log
+tail -n 10000 /var/log/livecd.log | grep -i azure >> /var/log/temp.log
+cat /var/log/temp.log | sort | uniq 
+
