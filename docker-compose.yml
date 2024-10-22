@@ -1,8 +1,8 @@
 
 services:
-  alpine-nginx-nodejs-websocketd-hl:
+  azure-log-viewer:
     build: .
-    image: hackinglab/alpine-nginx-nodejs-websocketd-hl:3.2
+    image: hackinglab/azure-log-viewer:3.2
     environment:
     - AUTHOR=e1
     - HL_USER_USERNAME=hacker
